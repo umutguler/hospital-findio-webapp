@@ -1,0 +1,21 @@
+.bg-carousel {
+	margin: 0 !important;
+	z-index: -100;
+	top: 0;
+	position: absolute;
+	width: 100%;
+
+	.bg-carousel-item {
+		width: 100%;
+		height: 100vh;
+		margin: 0;
+		overflow: hidden;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: blur(5px);
+	}
+}

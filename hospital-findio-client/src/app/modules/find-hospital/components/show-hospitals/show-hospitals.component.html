@@ -1,0 +1,34 @@
+<main class="container bg-light text-dark">
+	<h1>List of Hosptials</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Hospital Name</th>
+				<th scope="col">Patient Count</th>
+				<th scope="col">Avg Process Time</th>
+				<th scope="col">Wait Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let hospital of paginatedHospitals">
+				<th scope="row">{{ hospital.id }}</th>
+				<td>
+					{{ hospital.name }}
+				</td>
+				<td>{{ hospital.patientCount | number }}</td>
+				<td>{{ hospital.averageProcessTime | number }}</td>
+				<td>{{ convertMinutes(hospital.waitingTime) }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="row mx-auto mt-auto">
+		<ngb-pagination
+			[collectionSize]="collectionSize"
+			[(page)]="page"
+			[pageSize]="pageSize"
+			(pageChange)="refreshTable()"
+		>
+		</ngb-pagination>
+	</div>
+</main>

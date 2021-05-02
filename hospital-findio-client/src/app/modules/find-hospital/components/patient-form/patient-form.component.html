@@ -1,0 +1,73 @@
+<main class="container">
+	<h1>Patient Details</h1>
+	<div>
+		<form [formGroup]="patientFormGroup" (ngSubmit)="onSubmit()">
+			<div class="form-group mb-4">
+				<label>What is your full name?</label>
+				<input type="text" class="form-control mb-3" formControlName="name" placeholder="Full name" required />
+				<span class="text-danger" *ngIf="name.invalid && name.touched">Please enter a valid name</span>
+			</div>
+
+			<div class="form-group mb-4">
+				<label>Please select or search for an illness</label>
+				<div class="input-group mb-4">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-search"></i></span>
+					</div>
+					<input type="text" class="form-control" placeholder="Search Illness" [formControl]="searchField" />
+				</div>
+				<select class="custom-select custom-select" formControlName="illnessId" size="5">
+					<option *ngFor="let illness of illnesses$ | async" [ngValue]="illness.id">
+						<ngb-highlight [result]="illness.name" [term]="searchField.value"></ngb-highlight>
+					</option>
+				</select>
+			</div>
+
+			<div class="form-group text-center mb-4">
+				<div>
+					<label class="lead">Please select level of pain from 1 to 5</label>
+				</div>
+				<div
+					class="radio-btn-group btn-group-toggle"
+					ngbRadioGroup
+					name="radioBasic"
+					formControlName="levelOfPain"
+				>
+					<label ngbButtonLabel>
+						<input ngbButton type="radio" [value]="0" /><i
+							class="fas fa-smile"
+							style="color: green; font-size: 2em"
+						></i
+					></label>
+					<label ngbButtonLabel>
+						<input ngbButton type="radio" [value]="1" /><i
+							class="fas fa-meh"
+							style="color: greenyellow; font-size: 2em"
+						></i
+					></label>
+					<label ngbButtonLabel>
+						<input ngbButton type="radio" [value]="2" /><i
+							class="fas fa-grimace"
+							style="color: yellow; font-size: 2em"
+						></i
+					></label>
+					<label ngbButtonLabel>
+						<input ngbButton type="radio" [value]="3" /><i
+							class="fas fa-frown"
+							style="color: orange; font-size: 2em"
+						></i
+					></label>
+					<label ngbButtonLabel>
+						<input ngbButton type="radio" [value]="4" /><i
+							class="fas fa-sad-cry"
+							style="color: red; font-size: 2em"
+						></i
+					></label>
+				</div>
+			</div>
+			<div class="form-group text-center">
+				<button type="submit" class="btn btn-primary" [disabled]="!patientFormGroup.valid">Submit</button>
+			</div>
+		</form>
+	</div>
+</main>

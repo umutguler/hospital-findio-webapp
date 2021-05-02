@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+	margin: 0;
+	background-color: $dark;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.main-container {
+	height: 100vh;
+	overflow: auto;
+
+	.container {
+		width: 50%;
+		margin-top: 10em;
+		color: #fff;
+		h1,
+		h2,
+		h3 {
+			text-align: center;
+		}
+	}
+}
+
+.xy-container {
+	max-width: 48em;
+	-ms-flex-pack: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+	color: #fff;
+	p,
+	span {
+		text-align: center;
+	}
+}
+
+span.ngb-highlight {
+	background-color: yellow;
+}
+
+.bg-transparent,
+main {
+	display: flex;
+	flex-direction: column;
+	padding: 5em;
+	background-color: rgba($color: #111, $alpha: 0.4) !important;
+	border-radius: 2em;
+
+	.text-danger {
+		font-size: 1.2em;
+		text-shadow: 0 0.05rem 0.5rem rgba(0, 0, 0, 0.5);
+	}
+}
+
+.btn-primary:hover:enabled {
+	background-color: #333;
+	text-shadow: none; /* Prevent inheritance from `body` */
+	color: #fff;
+	border: 0.05rem solid #333;
+}
+
+form {
+	max-width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	label {
+		@extend .lead;
+	}
+
+	.radio-btn-group {
+		.active {
+			background-color: $info;
+		}
+	}
+}

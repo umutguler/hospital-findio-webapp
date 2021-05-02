@@ -1,0 +1,4 @@
+{
+	"eslint.workingDirectories": ["./hospital-findio-client"],
+	"dotnet-test-explorer.testProjectPath": "./Hospital.Findio.Api.Tests/Hospital.Findio.Api.Tests.csproj"
+}
