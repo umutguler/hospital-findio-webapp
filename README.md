@@ -25,10 +25,9 @@ Use two terminals
 
 ```bash
 # first terminal - server
-cd ./Dmmw.Api/
-dotnet build -c release
 
 cd ./Hospital.Findio.Api/
+# you may need to do a dotnet restore if dependency errros occur
 dotnet run
 # runs at https://localhost:5001
 
