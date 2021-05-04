@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital.Findio.Api", "Hospital.Findio.Api.csproj", "{A65B610F-FFA0-4F07-921C-7915CD348C48}"
+	ProjectSection(ProjectDependencies) = postProject
+		{42AAA913-E96F-476E-A709-9FD124CCAA9D} = {42AAA913-E96F-476E-A709-9FD124CCAA9D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital.Findio.Api.Tests", "..\Hospital.Findio.Api.Tests\Hospital.Findio.Api.Tests.csproj", "{EBE20769-80F1-48D5-A8CE-3E0A7604A270}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital.Findio.Api.Tests", "..\Hospital.Findio.Api.Tests\Hospital.Findio.Api.Tests.csproj", "{EBE20769-80F1-48D5-A8CE-3E0A7604A270}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dmmw.Api", "..\Dmmw.Api\Dmmw.Api.csproj", "{42AAA913-E96F-476E-A709-9FD124CCAA9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{EBE20769-80F1-48D5-A8CE-3E0A7604A270}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBE20769-80F1-48D5-A8CE-3E0A7604A270}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBE20769-80F1-48D5-A8CE-3E0A7604A270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42AAA913-E96F-476E-A709-9FD124CCAA9D}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{42AAA913-E96F-476E-A709-9FD124CCAA9D}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{42AAA913-E96F-476E-A709-9FD124CCAA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AAA913-E96F-476E-A709-9FD124CCAA9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
